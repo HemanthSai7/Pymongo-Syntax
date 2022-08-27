@@ -248,3 +248,5 @@ class Dataset:
             "date": parse("2021-01-13T05:10:13Z"),
         },
     ]
+
+# print(type(Dataset.dataset1))

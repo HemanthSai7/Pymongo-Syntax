@@ -1,0 +1,4 @@
+pymongo
+python-dotenv
+python-dateutil
+streamlit

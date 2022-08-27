@@ -25,4 +25,6 @@ class Singleton:
         """
         The get_client() function is used to get the client instance. 
         """
-        return Singleton.__client      
+        return Singleton.__client   
+
+# s=Singleton()     
