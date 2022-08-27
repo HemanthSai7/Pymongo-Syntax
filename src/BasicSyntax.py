@@ -18,14 +18,14 @@ class Queries():
     self.collection_name=collection_name
     self.database_name=database_name
 
-  def insert_documents(self,dataset):
+  def insert_dataset(self,dataset):
     """insert records"""
     mydb=con.client[self.database_name]
     mycol=mydb[self.collection_name]
     if type(dataset) is list:
-      mycol.insert_many(dataset)
+      return mycol.insert_many(dataset)
     else:
-      mycol.insert_one(dataset)
+      return mycol.insert_one(dataset)
   
   def count_documents(self,collection_name):
     """count dcouments in collection"""
@@ -33,7 +33,7 @@ class Queries():
     mycol=mydb[collection_name]
     return mycol.count_documents({})
   
-  def find_documents(self,collection_name):
+  def find_documents(self,collection_name,query):
     """find documents in collection"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
@@ -188,6 +188,6 @@ class Queries():
       return doc
 
 
-test=Queries("collection1","LearnMongoDB")
+# test=Queries("collection1","LearnMongoDB")
 # test.insert_documents(Dataset.dataset1)
-print(test.and_keyword("collection1"))
+# print(test.and_keyword("collection1"))
