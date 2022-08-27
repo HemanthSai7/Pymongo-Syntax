@@ -2,3 +2,6 @@ pymongo
 python-dotenv
 python-dateutil
 streamlit
+
+#if facing any error with streamlit.cli, try this. The basically means that you are using a newer version of streamlit and the code is not compatible with it. Try uninstalling streamlit and then installing
+#networkx

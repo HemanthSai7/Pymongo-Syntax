@@ -44,16 +44,19 @@ class Queries():
     """$and"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    andlist=[]
     for doc in mycol.find({
       "$and":[{"capital":"Washington, D.C.",},
           {"name":"United States",}]
           }):
-          return doc
+          andlist.append(doc)
+    return andlist
 
   def or_keyword(self,collection_name):
     """$or"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    orlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -64,12 +67,14 @@ class Queries():
         }
         ]
         }):
-        return doc     
+        orlist.append(doc)    
+    return orlist     
 
   def in_keyword(self,collection_name):
     """$in"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    inlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -81,12 +86,14 @@ class Queries():
           }
         }
       ]}):
-      return doc
+      inlist.append(doc)
+    return inlist
 
   def lessthan_keyword(self,collection_name):
     """$lt"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    ltlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -100,12 +107,14 @@ class Queries():
         }
         }
       ]}):
-      return doc
+      ltlist.append(doc)
+    return ltlist
 
   def greaterthan_keyword(self,collection_name):
     """$gt"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    gtlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -119,12 +128,14 @@ class Queries():
         }
         }
       ]}):
-      return doc
+      gtlist.append(doc)
+    return gtlist
 
   def equal_keyword(self,collection_name):
     """$eq"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    eqlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -138,12 +149,14 @@ class Queries():
         }
         }
       ]}):
-      return doc
+      eqlist.append(doc)
+    return eqlist
 
   def notequal(self,collection_name):
     """$ne"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    nelist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -157,12 +170,14 @@ class Queries():
         }
         }
       ]}):
-      return doc
+      nelist.append(doc)
+    return nelist
 
   def notin_keyword(self,collection_name):
     """$nin"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    ninlist=[]
     for doc in mycol.find({
       "$or":[
         {
@@ -176,18 +191,21 @@ class Queries():
         }
         }
       ]}):
-      return doc    
+      ninlist.append(doc)
+    return ninlist    
 
 
   def greaterthanequal_keyword(self,collection_name):
     """$gte"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
+    gtelist=[]
     for doc in mycol.find({
       "$gte":125960000}):
-      return doc
+      gtelist.append(doc)
+    return gtelist
 
 
 # test=Queries("collection1","LearnMongoDB")
 # test.insert_documents(Dataset.dataset1)
-# print(test.and_keyword("collection1"))
+# print(test.lessthan_keyword("collection1"))

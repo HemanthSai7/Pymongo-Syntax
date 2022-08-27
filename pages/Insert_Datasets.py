@@ -38,17 +38,24 @@ elif option=="dataset6":
   st.write("Dataset inserted")
 elif option=="dataset7":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset7))
+  st.write("Dataset inserted")
 elif option=="dataset8":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset8))
+  st.write("Dataset inserted")
 elif option=="dataset9":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset9))
+  st.write("Dataset inserted")
 elif option=="dataset10":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset10))
+  st.write("Dataset inserted")
 elif option=="dataset11":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset11))
+  st.write("Dataset inserted")
 elif option=="dataset12":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset12))
+  st.write("Dataset inserted")
 elif option=="dataset13":
-  st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset13))    
+  st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset13)) 
+  st.write("Dataset inserted")   
 else:
     st.write("No dataset selected")
