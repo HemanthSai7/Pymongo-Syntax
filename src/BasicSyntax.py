@@ -152,7 +152,7 @@ class Queries():
       eqlist.append(doc)
     return eqlist
 
-  def notequal(self,collection_name):
+  def notequal_keyword(self,collection_name):
     """$ne"""
     mydb=con.client[self.database_name]
     mycol=mydb[collection_name]
@@ -201,10 +201,43 @@ class Queries():
     mycol=mydb[collection_name]
     gtelist=[]
     for doc in mycol.find({
-      "$gte":125960000}):
+      "population":{
+        "$gte":125960000
+        }
+        }):
       gtelist.append(doc)
     return gtelist
 
+  def lessthanequal_keyword(self,collection_name):
+    """$lte"""
+    mydb=con.client[self.database_name]
+    mycol=mydb[collection_name]
+    ltelist=[]
+    for doc in mycol.find({
+      "population":{
+        "$lte":125960000
+        }
+        }):
+        ltelist.append(doc)
+    return ltelist  
+
+  def nor_keyword(self,collection_name):
+    """$nor"""
+    mydb=con.client[self.database_name]
+    mycol=mydb[collection_name]
+    norlist=[]
+    for doc in mycol.find({
+      "$nor":[
+        {
+          "population":25681300
+          
+        },
+        {
+          "population":328239523
+        }
+      ]}):
+      norlist.append(doc)
+    return norlist  
 
 # test=Queries("collection1","LearnMongoDB")
 # test.insert_documents(Dataset.dataset1)
