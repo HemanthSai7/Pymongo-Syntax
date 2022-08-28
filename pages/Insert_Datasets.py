@@ -6,7 +6,7 @@ st.set_page_config(page_title="Insert Dataset")
 
 st.markdown("# Insert Dataset")
 st.sidebar.title("Datasets")
-option=st.selectbox("Select a dataset",["dataset1","dataset2","dataset3","dataset4","dataset5","dataset6","dataset7","dataset8","dataset9","dataset10","dataset11","dataset12","dataset13"])
+option=st.selectbox("Select a dataset",[None,"dataset1","dataset2","dataset3","dataset4","dataset5","dataset6","dataset7","dataset8","dataset9","dataset10","dataset11","dataset12","dataset13"])
 
 collection_name=st.sidebar.text_input("Enter collection name")
 database_name=st.sidebar.text_input("Enter database name")
@@ -18,6 +18,9 @@ if database_name=="":
     
 
 #insert dataset
+if option==None:
+  st.sidebar.write("Please select a dataset")
+  st.sidebar.info("Dataset1 is already inserted into the database")
 if option=="dataset1":
   st.write(Queries(collection_name,database_name).insert_dataset(Dataset.dataset1))
   st.write("Dataset inserted")
