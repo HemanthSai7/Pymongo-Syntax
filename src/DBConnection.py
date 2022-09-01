@@ -27,4 +27,4 @@ class Singleton:
         """
         return Singleton.__client   
 
-# s=Singleton()     
+# s=Singleton()

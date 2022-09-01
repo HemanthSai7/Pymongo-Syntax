@@ -9,9 +9,6 @@ class Configuration:
   client=Singleton().get_client()
 con=Configuration()
 
-
-# dataset1=json.dumps(dataset1)
-# print(json.loads(dataset1))
 class Queries():
   def __init__(self,collection_name,database_name):
 
